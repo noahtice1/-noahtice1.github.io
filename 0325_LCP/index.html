@@ -48,10 +48,46 @@
             margin-left: 10px;
         }
     </style>
+    <link rel="stylesheet" href="site.css"/>
+    <style>
 
+
+
+    </style>
 </head>
 
 <body>
+
+    <script>
+        "usestrict";
+        let R = null;
+
+        let url = `https://excuser-three.vercel.app/v1/excuse/college/`;
+        // async function
+        // sync function
+
+        async function loade()
+        {
+
+            let r = await fetch(url);
+            let rj = await r.json();
+
+            let d3 = document.querySelector(`#d3`);
+            d3.innerHTML = rj[0].excuse;
+            rj[0].excuse
+
+            R = rj;
+            console.log(rj);
+        }
+        loade();
+       
+
+
+    </script>
+
+    <div id="d3"></div>
+
+    <div class="div1"></div>
     <div id="d1"></div>
 
     <button id="b1" class="btn btn-warning btn-lg">
@@ -89,7 +125,7 @@
             <h3>${rj.fact}</h3>
             <br/>
             <h1>Length:</h1><br/>
-           <h3> ${rj.length}<h3/>
+           <h3>${rj.length}<h3/>
             `;
             });
 
