@@ -69,11 +69,14 @@
 
         {
             let btn1 = document.querySelector("#btn1");
+
             let btn2 = document.querySelector("#btn2");
+
             let btn3 = document.querySelector("#btn3");
 
             async function GetChart(name) {
                 if (chart1 != null) {
+
                     chart1.destroy();
                 }
 
@@ -82,15 +85,18 @@
                 }
 
                 if (chart3 != null) {
+
                     chart3.destroy();
                 }
 
 
                 let url = "";
                 if (name == "3013") {
+
                     url = "https://juxinglong.github.io/static/HW/hw6/MIS3013.json";
                 }
                 else if (name == "3033") {
+
                     url = "https://juxinglong.github.io/static/HW/hw6/MIS3033.json";
                 }
                 else {
@@ -103,7 +109,7 @@
                 g = rj;
 
 
-                //chart 1
+                
                 let params =
                 {
                     type: 'bar',
@@ -120,7 +126,7 @@
 
                 chart1 = new Chart(c1, params);
 
-                //chart 2
+                
                 params =
                 {
                     type: 'line',
@@ -137,9 +143,10 @@
 
                 chart2 = new Chart(c2, params);
 
-                // chart 3
+                
                 params =
                 {
+
                     type: 'pie',
                     data: {
                         labels: rj.map(x => x.lg),
@@ -160,6 +167,7 @@
             async function GetTable(name) {
                 if (grid != null) {
                     grid.destroy();
+
                 }
 
                 let url = "";
@@ -176,6 +184,8 @@
                 let r = await fetch(url);
                 let rj = await r.json();
                 console.log(rj);
+
+
 
                 let params = {
                     data: rj,
